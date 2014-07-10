@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Snake</title>
+<script src="bandon/common.js"></script>
+<script>
+window.onload=function(){
+	var container = document.createDocumentFragment();
+	var i;
+	var x = window.innerWidth / 23, y = window.innerHeight / 23;
+	for(i = 0; i < x * y; i++){
+		var e = Element("div");
+		container.appendChild(e);
+	}
+	document.querySelector("#container").appendChild(container);
+	
+	i = 0;
+	setInterval(function(){
+		var l = document.querySelector("#container").childNodes;
+		l[i].style.background = "rgb(0, 0, 0)";
+		l[i].color = 0;
+		
+		var j;
+		for(j = 0; j < i; j++){
+			l[j].color+=10;
+			if(l[j].color >= 256)l[j].color = 0;
+			l[j].style.background = "rgb(" + l[j].color + "," + l[j].color + "," + l[j].color + ")";
+		}
+		
+		if(i + 1< x * y){
+			i++;
+		}
+	}, 50);
+}
+</script>
+<style>
+#container div{
+	float: left;
+	margin: 3px;
+	/*border: 1px solid;*/
+	width: 20px;
+	height: 20px;
+}
+</style>
+</head>
+<body>
+<div id="container"></div>
+</body>
