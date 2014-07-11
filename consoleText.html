@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Snake</title>
+<script>
+var object = {};
+console.log(object);
+object.test = 456;
+console.log(object);
+
+var array = [];
+console.log(array);
+array.push("test");
+console.log(array);
+
+var string = "string";
+console.log(string);
+string = "nostring";
+console.log(string);
+
+var number = 123;
+console.log(number);
+number = 456;
+console.log(number);
+</script>
+<style>
+#container div{
+	float: left;
+	margin: 3px;
+	/*border: 1px solid;*/
+	width: 20px;
+	height: 20px;
+}
+</style>
+</head>
+<body>
+<div id="container"><button onclick="init(); console.log('was', global)">XDD</button></div>
+</body>
